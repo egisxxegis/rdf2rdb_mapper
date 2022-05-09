@@ -11,10 +11,13 @@ if __name__ == '__main__':
         password=Settings.dbPassword,
         database=Settings.dbName
     )
+
     structureMiner = StructureMiner(mydb)
     structureMiner.process_structure()
-    with open(Settings.outputFile, "w") as output:
-        yaml.dump(structureMiner.get_structure_map(), output)
+    structureMap = structureMiner.get_structure_map()
 
-    with open("alt_" + Settings.outputFile, "w") as output:
-        yaml.dump(StructureMapUnpacked(structureMiner.get_structure_map()), output)
+    with open(Settings.outputFile, "w") as output:
+        yaml.dump(structureMap, output)
+
+    with open("unpacked_" + Settings.outputFile, "w") as output:
+        yaml.dump(StructureMapUnpacked(structureMap), output)
