@@ -1,0 +1,4 @@
+python=3.7.11
+mysql-connector-python~=8.0.18
+yaml~=0.2.5
+pyyaml~=6.0
