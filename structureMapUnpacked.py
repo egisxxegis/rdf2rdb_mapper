@@ -4,8 +4,7 @@ from settings import Settings
 class StructureMapUnpacked:
     def __init__(self, structure_map):
         self.uri_map_table = structure_map.uri_map_table
-        # self.table_map_properties_arr = structure_map.table_map_properties_arr
-        self.uri_as_property_map_tables_arr = {}
+        self.uri_as_property_map_tables_arr = {}  # unused
         self.property_map_tables_arr = {}
         self.class_tables = []
 
