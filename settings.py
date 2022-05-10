@@ -7,6 +7,7 @@ class Settings(object):
     outputFile = f"map_{dbName}.yaml"
 
     tableUris = "uris"
+    tableLabels = "labels"
 
     colUris = "uri"
     colClass = "class"
