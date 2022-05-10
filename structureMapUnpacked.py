@@ -1,12 +1,16 @@
+import yaml
+
 from settings import Settings
 
 
-class StructureMapUnpacked:
+class StructureMapUnpacked(yaml.YAMLObject):
+    yaml_tag = u'!StructureMapUnpacked'
+
     def __init__(self, structure_map):
         self.uri_map_table = structure_map.uri_map_table
         self.uri_map_property = {}
         self.property_map_tables_arr = {}
-        self.class_tables = []
+        self.class_tables_arr = []
         self.linking_tables_arr_dict = []
 
         self.meta = structure_map.meta
@@ -34,7 +38,7 @@ class StructureMapUnpacked:
 
     def process_uri_map_tables(self, uri_map_table: dict) -> None:
         for table in uri_map_table.values():
-            self.class_tables.append(table)
+            self.class_tables_arr.append(table)
 
     def process_linking_tables(self, table_map_object_properties_dict: dict) -> None:
         for linking_table, spo_dict in table_map_object_properties_dict.items():

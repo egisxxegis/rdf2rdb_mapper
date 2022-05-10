@@ -1,7 +1,11 @@
+import yaml
+
 from settings import Settings
 
 
-class StructureMap:
+class StructureMap(yaml.YAMLObject):
+    yaml_tag = u'!StructureMap'
+
     def __init__(self, uri_map_table: dict, table_map_properties_arr: dict, table_map_object_properties_dict: dict):
         self.uri_map_table = uri_map_table
         self.table_map_properties_arr = table_map_properties_arr
