@@ -5,8 +5,10 @@ https://github.com/michaelbrunnbauer/rdf2rdb <br />
 # Purpose
 Generate mapping file (YAML) from database. <br />
 It maps: <br />
-&nbsp;&nbsp;class uri -> class table <br />
-&nbsp;&nbsp;functional property -> class table <br />
+&nbsp;&nbsp;class uri          -> class table <br />
+&nbsp;&nbsp;property uri       -> property <br />
+&nbsp;&nbsp;datatypes property -> class table <br />
+&nbsp;&nbsp;object property    -> table of class1_property_class2 <br />
 
 # how-to
 1. Configure settings.py file <br />
